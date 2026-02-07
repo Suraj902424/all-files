@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /hospital/
+
+    # Custom URL aliases
+    RewriteRule ^home/?$ index.php [L]
+    RewriteRule ^about-me/?$ about.php [L]
+    RewriteRule ^our-offerings/?$ service.php [L]
+    RewriteRule ^meeting/?$ appointment.php [L]
+    RewriteRule ^plan/?$ price.php [L]
+    RewriteRule ^photos/?$ gallery.php [L]
+    RewriteRule ^get-in-touch/?$ contact.php [L]
+
+    # Default rule: remove .php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L]
+</IfModule>

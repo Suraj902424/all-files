@@ -1,0 +1,1 @@
+<?php namespace Dompdf; class Dompdf { public function loadHtml($h){} public function setPaper($s, $o){} public function render(){} public function output(){return 'PDF content';} }
